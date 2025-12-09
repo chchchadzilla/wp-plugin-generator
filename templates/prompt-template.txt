@@ -1,0 +1,10 @@
+Generate a production-ready WordPress plugin based on the following request:
+
+{{spec}}
+
+Requirements:
+- Return only valid PHP plugin code that can live in a single main plugin file.
+- Include a standard plugin header comment with name, description, version, and author fields.
+- Add thoughtful inline comments explaining key logic blocks.
+- Avoid external dependencies; rely on WordPress core APIs.
+- Provide safe defaults and nonce/permission checks around any actions or filters you register.

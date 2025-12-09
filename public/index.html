@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordPress Plugin Generator</title>
+    <style>
+      :root {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #111;
+        background: #f6f7f9;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      main {
+        inline-size: min(900px, 100%);
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+      }
+
+      h1 {
+        margin-block-start: 0;
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+      }
+
+      form {
+        display: grid;
+        gap: 1rem;
+        margin-block-end: 2rem;
+      }
+
+      label {
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .preset-meta {
+        font-size: 0.9rem;
+        color: #475569;
+      }
+
+      input,
+      textarea,
+      select {
+        font: inherit;
+        padding: 0.75rem 0.9rem;
+        border-radius: 8px;
+        border: 1px solid #cbd5f5;
+        background: #fdfdfd;
+      }
+
+      textarea {
+        min-block-size: 180px;
+        resize: vertical;
+      }
+
+      button {
+        font: inherit;
+        font-weight: 600;
+        background: #2563eb;
+        color: #fff;
+        border: none;
+        padding: 0.85rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      button:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+      }
+
+      .result {
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 1rem;
+        background: #0f172a;
+        color: #e2e8f0;
+        min-block-size: 260px;
+        white-space: pre;
+        overflow-x: auto;
+      }
+
+      .actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-block-end: 1rem;
+      }
+
+      .actions button {
+        background: #0f172a;
+        border: 1px solid #0f172a;
+      }
+
+      .actions button.secondary {
+        background: #fff;
+        color: #0f172a;
+        border: 1px solid #d2d7e5;
+      }
+
+      .status {
+        font-size: 0.95rem;
+        color: #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>WordPress Plugin Generator</h1>
+      <p>Bring an idea, pick any OpenRouter model, and receive plug-and-play PHP code.</p>
+      <form id="generator-form">
+        <label>
+          OpenRouter API Key
+          <input
+            type="password"
+            name="apiKey"
+            placeholder="sk-or-v1-..."
+            autocomplete="off"
+            required
+          />
+        </label>
+        <label>
+          Model ID
+          <input
+            type="text"
+            name="model"
+            value="openrouter/auto"
+            placeholder="e.g. openrouter/auto"
+            required
+          />
+        </label>
+        <label>
+          Start from a preset (optional)
+          <select id="preset-select">
+            <option value="">Pick a preset scenario…</option>
+          </select>
+          <span class="preset-meta" id="preset-summary">Presets cover beginner to expert workflows.</span>
+        </label>
+        <label>
+          Plugin description
+          <textarea
+            name="description"
+            placeholder="Example: A plugin that adds a dashboard widget summarizing new WooCommerce orders and sends an optional weekly email report."
+            required
+          ></textarea>
+        </label>
+        <button type="submit">Generate plugin</button>
+        <span class="status" id="status"></span>
+      </form>
+      <div class="actions">
+        <button class="secondary" type="button" id="copy-btn">Copy code</button>
+        <button type="button" id="download-btn">Download php file</button>
+      </div>
+      <pre class="result" id="result">Your plugin code will show up here.</pre>
+    </main>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

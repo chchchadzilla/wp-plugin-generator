@@ -1,0 +1,162 @@
+[
+  {
+    "id": "admin-dashboard-companion",
+    "title": "Beginner · Admin dashboard companion",
+    "level": "Beginner",
+    "category": "Starter Enhancements",
+    "summary": "Adds a friendly dashboard widget with daily tips and a dismissible notice for new site managers.",
+    "prompt": "Create a WordPress plugin named \"Admin Dashboard Companion\" that adds a dashboard widget showing three rotating tips for new site managers and a dismissible admin notice that appears only for users with the 'editor' role. Use transients or options to remember when a user dismissed the notice for at least 7 days. Keep the copy inspirational and concise."
+  },
+  {
+    "id": "shortcode-content-builder",
+    "title": "Beginner · Shortcode content builder",
+    "level": "Beginner",
+    "category": "Starter Enhancements",
+    "summary": "Simple shortcode that wraps highlighted content with elegant styling and optional call-to-action.",
+    "prompt": "Build a plugin called \"Highlight Capsule\" exposing a shortcode [highlight_capsule title=\"\" cta_label=\"\" cta_url=\"\"]Content[/highlight_capsule]. The shortcode should render semantic HTML with accessible labels, graceful fallbacks, and inline styles that match WordPress defaults. Escape all attributes and provide default values so beginners can use it safely."
+  },
+  {
+    "id": "custom-data-workflow",
+    "title": "Intermediate · Custom data workflow",
+    "level": "Intermediate",
+    "category": "Workflow Builders",
+    "summary": "Registers a custom post type + taxonomy with admin columns and meta box validation.",
+    "prompt": "Write a plugin named \"Resource Library Manager\" that registers a custom post type 'resource' plus a hierarchical taxonomy 'resource_topic'. Add a meta box for an external resource URL, validate it, and show the link inside the admin list table via a custom column. Ensure capabilities map to 'manage_options' for editing and include activation/deactivation hooks to flush rewrite rules."
+  },
+  {
+    "id": "editorial-approvals",
+    "title": "Intermediate · Editorial approvals",
+    "level": "Intermediate",
+    "category": "Workflow Builders",
+    "summary": "Adds editorial approval workflow with custom status + email notifications.",
+    "prompt": "Create a plugin called \"Editorial Approval Lane\" that introduces a custom post status 'awaiting-approval', adds an admin column + bulk action to move posts into that status, and emails the site administrator whenever a post enters or leaves the status. Use wp_mail with a customizable subject and make sure emails include links back to the post and the moderation queue."
+  },
+  {
+    "id": "woocommerce-order-guardian",
+    "title": "Advanced · WooCommerce order guardian",
+    "level": "Advanced",
+    "category": "Commerce & Security",
+    "summary": "Monitors WooCommerce orders for anomalies, sends Slack/webhook alerts, and renders a dashboard panel.",
+    "prompt": "Develop a plugin titled \"Woo Order Guardian\" that hooks into WooCommerce order status transitions. Detect if an order exceeds a configurable threshold or uses a restricted country and send a JSON payload to a user-defined webhook endpoint (default to Slack format). Include nonce-protected settings under WooCommerce > Settings > Advanced. Also add a dashboard widget summarizing flagged orders from the last 24 hours using performant WP_Query calls."
+  },
+  {
+    "id": "login-safety-monitor",
+    "title": "Advanced · Login safety monitor",
+    "level": "Advanced",
+    "category": "Commerce & Security",
+    "summary": "Tracks failed logins, rate limits offenders, and exposes an audit log screen.",
+    "prompt": "Produce a plugin named \"Login Safety Monitor\" that logs failed login attempts with IP, username, and timestamp using a custom database table created on activation. If an IP has 5 failures within 15 minutes, block it for one hour with wp_die messaging. Provide an admin page showing the log with filters, nonce-protected bulk unblock actions, and automatic cleanup of rows older than 30 days via WP-Cron."
+  },
+  {
+    "id": "gutenberg-dynamic-insights",
+    "title": "Expert · Gutenberg dynamic insights block",
+    "level": "Expert",
+    "category": "Modern Blocks & APIs",
+    "summary": "Creates a server-rendered block pulling analytics data with caching and inspector controls.",
+    "prompt": "Craft a plugin \"Dynamic Insights Block\" registering a server-side rendered Gutenberg block that displays lightweight analytics (page views, average time on page). Pull mock data via wp_remote_get from a configurable endpoint set in block settings. Use wp_cache to store responses for 10 minutes, expose inspector controls for metrics + color scheme, and ensure the block gracefully handles API errors."
+  },
+  {
+    "id": "headless-api-bridge",
+    "title": "Advanced · Headless API bridge",
+    "level": "Advanced",
+    "category": "Modern Blocks & APIs",
+    "summary": "Extends the REST API with tailored endpoints and HMAC-authenticated hooks for headless builds.",
+    "prompt": "Write a plugin \"Headless API Bridge\" that registers namespaced REST API routes for pulling published posts with selected meta, saving newsletter signups, and triggering a rebuild webhook. Authenticate requests using an HMAC signature (shared secret stored in settings). Include PHPUnit-ready structure and filters so developers can customize the payload before it leaves the server."
+  },
+  {
+    "id": "multisite-orchestrator",
+    "title": "Expert · Multisite orchestrator",
+    "level": "Expert",
+    "category": "Performance & Multisite",
+    "summary": "Synchronizes network-wide settings and provides safe batch operations across sites.",
+    "prompt": "Design a plugin named \"Multisite Orchestrator\" for WordPress multisite that lets super admins push a JSON settings payload (site title, admin email, custom option) to selected subsites. Include a network admin page with nonce-protected bulk actions, queue the operations via WP background processing (or batched cron), and log results to a custom table with a viewer UI. Provide rollback for the last sync."
+  },
+  {
+    "id": "performance-profiler",
+    "title": "Expert · Performance profiler",
+    "level": "Expert",
+    "category": "Performance & Multisite",
+    "summary": "Profiles slow hooks/queries and surfaces actionable reports with recommendations.",
+    "prompt": "Implement a plugin \"Performance Profiler\" that monitors page generation time, counts queries, and tracks the 5 slowest hooks on each request using the profiler API. Store aggregated stats in the options table with rotation every hour. Provide an admin page with charts (use pure HTML/CSS) and highlight actionable recommendations (e.g., disable specific plugins, cache menus). Allow enabling/disabling profiling per user role."
+  },
+  {
+    "id": "plugin-suite-license-hub",
+    "title": "Expert · License + telemetry hub",
+    "level": "Expert",
+    "category": "Suite Infrastructure",
+    "summary": "Centralizes license activation, update pings, and lightweight telemetry for commercial plugin suites.",
+    "prompt": "Build a plugin named \"License & Telemetry Hub\" that exposes a secure REST endpoint and admin UI where child plugins can register, activate licenses, and push anonymized usage metrics. Use application passwords or signed tokens for auth, store license states in custom tables, and provide hooks/filters so satellite plugins can customize payloads. Include rate limiting, opt-out toggles, and a WP-CLI command to audit activations."
+  },
+  {
+    "id": "plugin-dx-toolkit",
+    "title": "Expert · Developer experience toolkit",
+    "level": "Expert",
+    "category": "Suite Infrastructure",
+    "summary": "Adds WP-CLI generators, scaffolding wizards, and lint hooks tailored for plugin teams.",
+    "prompt": "Implement \"Plugin DX Toolkit\" that registers WP-CLI commands for scaffolding mu-plugins, service objects, and integration tests. Add an admin settings page where teams can configure namespaces, coding standards, and default dependency injections. Ship a pre-commit style PHP_CodeSniffer integration triggered directly from the plugin with WP-CLI wrappers."
+  },
+  {
+    "id": "plugin-ui-kits",
+    "title": "Expert · Shared UI micro-kit",
+    "level": "Expert",
+    "category": "Suite Infrastructure",
+    "summary": "Offers React/JS components and PHP helpers for cohesive settings screens across plugins.",
+    "prompt": "Assemble \"Plugin UI Kit\" that bundles a React component library (built atop @wordpress/components) plus PHP render helpers so multiple plugins share identical settings UX. Include form state syncing, async option saving, and a theme-aware palette. Provide a registry so each plugin can declare which components it consumes, enabling tree-shaken builds."
+  },
+  {
+    "id": "plugin-conflict-radar",
+    "title": "Expert · Conflict radar",
+    "level": "Expert",
+    "category": "Quality & Release",
+    "summary": "Profiles hooks, scripts, and styles to detect conflicts between installed plugins.",
+    "prompt": "Create \"Plugin Conflict Radar\" that scans active plugins for overlapping hook priorities, duplicate script handles, and conflicting shortcodes. Provide a diagnostics admin page listing potential collisions with remediation tips, integrate with Query Monitor style panels, and allow exporting a JSON report. The scanner should run via WP-CLI and cache results to avoid heavy processing on every request."
+  },
+  {
+    "id": "plugin-update-staging",
+    "title": "Expert · Update staging orchestrator",
+    "level": "Expert",
+    "category": "Quality & Release",
+    "summary": "Stages plugin updates in a sandbox and promotes them after snapshot verification.",
+    "prompt": "Design \"Plugin Update Stager\" that duplicates selected plugins into a temporary sandbox directory, runs activation smoke tests (hooks, critical shortcodes), and only promotes the update when the developer approves the diff. Include a rollback button, snapshot comparison logs, and filters so CI can trigger the promotion programmatically."
+  },
+  {
+    "id": "plugin-rollbacksafe",
+    "title": "Expert · Rollback safe state",
+    "level": "Expert",
+    "category": "Quality & Release",
+    "summary": "Snapshots plugin data/options before risky deployments and restores on failure.",
+    "prompt": "Produce \"Rollback Safe State\" that snapshots plugin-owned options, custom tables, and uploads folder segments into ZIP archives before a deployment flag is flipped. Provide hooks for other plugins to register data exporters. If an error flag is set (via REST or WP-CLI), automatically restore the last snapshot with idempotent operations and log the audit trail."
+  },
+  {
+    "id": "plugin-sandbox-multisite",
+    "title": "Expert · Multisite sandbox router",
+    "level": "Expert",
+    "category": "Quality & Release",
+    "summary": "Spins up isolated subsites for plugin QA with seeded data and teardown routines.",
+    "prompt": "Craft \"Multisite Sandbox Router\" that lets super admins spawn throwaway subsites preloaded with sample posts, WooCommerce data, and user roles to test plugin suites. Provide expiration timers, clean teardown (including tables/media), and an API other plugins can call to request sandboxes. Track resource usage and block creation if quotas are exceeded."
+  },
+  {
+    "id": "plugin-performance-contracts",
+    "title": "Expert · Performance contracts",
+    "level": "Expert",
+    "category": "Observability & Compliance",
+    "summary": "Enforces SLA-style budgets for hooks, queries, and asset sizes per plugin.",
+    "prompt": "Develop \"Performance Contracts\" that lets architects declare budgets (max SQL queries, total hook runtime, CSS/JS weight) per plugin slug. Instrument WordPress hooks to attribute cost, alert in the admin bar when limits exceed, and store daily digests. Provide an API endpoint so CI can fail a build if a plugin violates its budget."
+  },
+  {
+    "id": "plugin-observability-bus",
+    "title": "Expert · Observability bus",
+    "level": "Expert",
+    "category": "Observability & Compliance",
+    "summary": "Central message bus for logging, tracing, and alerting across a plugin portfolio.",
+    "prompt": "Create \"Plugin Observability Bus\" that instruments do_action/apply_filters calls, logs structured events, and forwards anomalies to destinations (Logstash, Slack, Sentry). Include a developer console inside wp-admin showing live traces, sampling controls, and filters per plugin slug. Provide PHP traits developers can mix into their service classes to emit spans automatically."
+  },
+  {
+    "id": "plugin-compliance-guardian",
+    "title": "Expert · Compliance guardian",
+    "level": "Expert",
+    "category": "Observability & Compliance",
+    "summary": "Audits plugin code for PII handling, GDPR hooks, and consent banners across suite installs.",
+    "prompt": "Write \"Compliance Guardian\" that scans plugin directories for PII touchpoints (user_meta, cookies, REST responses), ensures consent hooks fire, and generates an audit report mapping each plugin to its obligations. Provide wp-admin UI to acknowledge findings, log remediation steps, and schedule monthly scans via WP-Cron."
+  }
+]

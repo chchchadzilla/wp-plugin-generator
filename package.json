@@ -1,0 +1,26 @@
+{
+  "name": "wp-plugin-generator",
+  "version": "1.0.0",
+  "description": "Minimal OpenRouter-powered WordPress plugin generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --version"
+  },
+  "keywords": [],
+  "author": "chchchadzilla",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chchchadzilla/wp-plugin-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chchchadzilla/wp-plugin-generator/issues"
+  },
+  "homepage": "https://github.com/chchchadzilla/wp-plugin-generator#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "node-fetch": "^2.7.0"
+  }
+}
