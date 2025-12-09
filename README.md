@@ -36,6 +36,23 @@ npm start
 
 Navigate to <http://localhost:3000> and open the UI.
 
+## Publish to GitHub
+
+1. Create (or confirm) an empty repository named `wp-plugin-generator` under <https://github.com/chchchadzilla>.
+2. The project is already initialized with Git metadata, MIT license, and a remote pointing to `https://github.com/chchchadzilla/wp-plugin-generator.git`.
+3. Push the code:
+
+```cmd
+git push -u origin master
+```
+
+1. Tag releases whenever you cut new preset bundles:
+
+```cmd
+git tag v1.0.0
+git push origin v1.0.0
+```
+
 ## Usage
 
 1. Paste your OpenRouter API key (or leave blank if the server already has `OPENROUTER_API_KEY`).
