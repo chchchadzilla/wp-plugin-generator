@@ -57,9 +57,3 @@ Navigate to <http://localhost:3000> and open the UI.
 - Requests >512 KB are rejected by Express.
 - Each OpenRouter call times out after 60 seconds to avoid hanging connections.
 - Errors from OpenRouter are surfaced directly so you can adjust your prompt or quota.
-
-## Next steps
-
-- Harden validation for user-supplied prompts.
-- Add optional zipping of the plugin file with additional assets.
-- Introduce lightweight caching for repeated prompts.
